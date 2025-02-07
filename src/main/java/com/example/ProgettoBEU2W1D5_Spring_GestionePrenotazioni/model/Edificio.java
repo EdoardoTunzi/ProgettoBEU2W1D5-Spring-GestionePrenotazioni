@@ -23,10 +23,13 @@ public class Edificio {
     @OneToMany(mappedBy = "edificio")
     private List<Postazione> listaPostazioni = new ArrayList<Postazione>();
 
-    public Edificio(String nome, String indirizzo, String citta, List<Postazione> listaPostazioni) {
+    public Edificio(String nome, String indirizzo, String citta) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.citta = citta;
-        this.listaPostazioni = listaPostazioni;
+    }
+
+    public void addPostazione (Postazione p) {
+        this.listaPostazioni.add(p);
     }
 }
