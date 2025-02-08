@@ -21,7 +21,21 @@ public class PrenotazioneRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Prenotazione pre1 = prenotazioneService.createPrenotazione(postazioneService.findPostazioneById(2L), LocalDate.now(), utenteService.findUtenteById(1L));
+
+        //creazione di una prenotazione
+
+        /*Prenotazione pre1 = prenotazioneService.createPrenotazione(postazioneService.findPostazioneById(4L), LocalDate.of(2025,2,11), utenteService.findUtenteById(4L));
+        Prenotazione pre2 = prenotazioneService.createPrenotazione(postazioneService.findPostazioneById(5L), LocalDate.of(2025,2,8), utenteService.findUtenteById(5L));
+        Prenotazione pre3 = prenotazioneService.createPrenotazione(postazioneService.findPostazioneById(6L), LocalDate.of(2025,2,9), utenteService.findUtenteById(6L));
+
+        //salvataggio prenotazione
         prenotazioneService.savePrenotazione(pre1);
+        prenotazioneService.savePrenotazione(pre2);
+        prenotazioneService.savePrenotazione(pre3);
+*/
+
+        // metodo per cancellare tutte le prenotazioni scadute precedenti alla data odierna
+       /* prenotazioneService.deletePrenotazioniScadute();*/
+
     }
 }

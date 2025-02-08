@@ -20,7 +20,7 @@ public class Edificio {
     private String nome;
     private String indirizzo;
     private String citta;
-    @OneToMany(mappedBy = "edificio")///
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Postazione> listaPostazioni = new ArrayList<Postazione>();
 
     public Edificio(String nome, String indirizzo, String citta) {
@@ -29,7 +29,7 @@ public class Edificio {
         this.citta = citta;
     }
 
-    public void addPostazione (Postazione p) {
+    public void addPostazione(Postazione p) {
         this.listaPostazioni.add(p);
     }
 }

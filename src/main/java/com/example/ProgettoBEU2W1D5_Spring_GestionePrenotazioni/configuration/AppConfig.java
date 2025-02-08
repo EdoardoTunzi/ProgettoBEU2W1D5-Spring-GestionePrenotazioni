@@ -17,14 +17,18 @@ public class AppConfig {
     @Autowired
     private EdificioDAORepository edificioDAO;
 
+    //creazione beans
+
     @Bean("utente1")
     public Utente utente1Bean() {
         return new Utente("utente1", fake.name().fullName(), fake.internet().emailAddress());
     }
+
     @Bean("utente2")
     public Utente utente2Bean() {
         return new Utente("utente2", fake.name().fullName(), fake.internet().emailAddress());
     }
+
     @Bean("utente3")
     public Utente utente3Bean() {
         return new Utente("utente3", fake.name().fullName(), fake.internet().emailAddress());
@@ -35,20 +39,25 @@ public class AppConfig {
         return new Edificio("MainEdificio", fake.address().streetAddress(), fake.address().cityName());
     }
 
-    @Bean("postazione1")
+    //NOTA:
+    // dato che i bean delle postazioni utilizzano edificioDAO,
+    // alla prima creazione del db devono essere commentati per evitare errori nella creazione del db.
+    // Possono essere utilizzati solo una volta creato l'edificio
+
+   /* @Bean("postazione1")
     public Postazione postazione1Bean() {
-        return new Postazione("Sala Imperiale", TipoPostazione.SALA_RIUNIONI,300, edificioDAO.findById(1L).get());
+        return new Postazione("Sala Imperiale", TipoPostazione.SALA_RIUNIONI, 300, edificioDAO.findById(1L).get());
     }
 
     @Bean("postazione2")
-    public Postazione postazione2Bean( ) {
-        return new Postazione("Sala Primavera", TipoPostazione.OPENSPACE,150,edificioDAO.findById(1L).get());
+    public Postazione postazione2Bean() {
+        return new Postazione("Sala Primavera", TipoPostazione.OPENSPACE, 150, edificioDAO.findById(1L).get());
     }
 
     @Bean("postazione3")
-    public Postazione postazione3Bean( ) {
-        return new Postazione("Sala Levante", TipoPostazione.PRIVATO,30,edificioDAO.findById(1L).get());
-    }
+    public Postazione postazione3Bean() {
+        return new Postazione("Sala Levante", TipoPostazione.PRIVATO, 30, edificioDAO.findById(1L).get());
+    }*/
 
     @Bean("prenotazioneCustom")
     @Scope("prototype")

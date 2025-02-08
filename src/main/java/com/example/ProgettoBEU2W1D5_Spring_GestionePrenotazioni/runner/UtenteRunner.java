@@ -8,19 +8,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UtenteRunner implements CommandLineRunner {
-    @Autowired private UtenteService utenteService;
+    @Autowired
+    private UtenteService utenteService;
 
     @Override
     public void run(String... args) throws Exception {
+
+        //creazione utenti
 
         /*Utente u1 = utenteService.createUtente1();
         Utente u2 = utenteService.createUtente2();
         Utente u3 = utenteService.createUtente3();
 
+        //salvataggio utenti su db
+
         utenteService.saveUtente(u1);
         utenteService.saveUtente(u2);
-        utenteService.saveUtente(u3);*/
-
+        utenteService.saveUtente(u3);
+*/
 
     }
 }

@@ -30,17 +30,4 @@ public class Utente {
         this.email = email;
     }
 
-    public void aggiungiPrenotazione(Prenotazione prenotazione) {
-        List<LocalDate> datePrenot = new ArrayList<>();
-        listaPrenotazioni.forEach(ele -> datePrenot.add(ele.getDataPrenotazione()));
-        if (!datePrenot.contains(prenotazione.getDataPrenotazione())) {
-            if (prenotazione.getPostazione().isDisponibile()) {
-                listaPrenotazioni.add(prenotazione);
-            } else {
-                System.out.println("La postazione scelta non è disponibile");
-            }
-        } else {
-            System.out.println("non puoi prenotare altre postazioni in questa data, perchè hai gia una prenotazione per questo giorno.");
-        }
-    }
 }

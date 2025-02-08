@@ -14,6 +14,8 @@ public class EdificioRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        //creazione edificio e salvataggio
+
         /*Edificio e1 = edificioService.createEdificio1();
         edificioService.saveEdificio(e1);*/
     }

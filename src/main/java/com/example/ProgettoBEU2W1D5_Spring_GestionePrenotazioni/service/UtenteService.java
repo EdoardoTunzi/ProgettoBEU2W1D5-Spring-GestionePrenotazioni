@@ -9,9 +9,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UtenteService {
-    @Autowired @Qualifier("utente1") ObjectProvider<Utente> utente1Provider;
-    @Autowired @Qualifier("utente2") ObjectProvider<Utente> utente2Provider;
-    @Autowired @Qualifier("utente3") ObjectProvider<Utente> utente3Provider;
+    @Autowired
+    @Qualifier("utente1")
+    ObjectProvider<Utente> utente1Provider;
+    @Autowired
+    @Qualifier("utente2")
+    ObjectProvider<Utente> utente2Provider;
+    @Autowired
+    @Qualifier("utente3")
+    ObjectProvider<Utente> utente3Provider;
 
     @Autowired
     UtenteDAORepository utenteDAO;
@@ -19,9 +25,11 @@ public class UtenteService {
     public Utente createUtente1() {
         return utente1Provider.getObject();
     }
+
     public Utente createUtente2() {
         return utente2Provider.getObject();
     }
+
     public Utente createUtente3() {
         return utente3Provider.getObject();
     }
@@ -29,9 +37,10 @@ public class UtenteService {
     //metodi DAO
     public void saveUtente(Utente u) {
         utenteDAO.save(u);
+        System.out.println("Utente con nome: " + u.getNomeCompleto()+"salvato nel DB!");
     }
 
     public Utente findUtenteById(long id) {
-       return utenteDAO.findById(id).get();
+        return utenteDAO.findById(id).get();
     }
 }

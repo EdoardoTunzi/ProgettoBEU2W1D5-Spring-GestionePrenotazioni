@@ -22,6 +22,7 @@ public class EdificioService {
     //metodi DAO
     public void saveEdificio(Edificio edificio) {
         edificioDAO.save(edificio);
+        System.out.println("Edificio: " +edificio.getNome()+ " salvato su DB!");
     }
 
     public Edificio findEdificioById(long id) {
