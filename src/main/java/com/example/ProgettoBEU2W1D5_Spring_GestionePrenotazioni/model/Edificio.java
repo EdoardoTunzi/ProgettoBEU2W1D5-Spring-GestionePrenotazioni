@@ -20,7 +20,7 @@ public class Edificio {
     private String nome;
     private String indirizzo;
     private String citta;
-    @OneToMany(mappedBy = "edificio")
+    @OneToMany(mappedBy = "edificio")///
     private List<Postazione> listaPostazioni = new ArrayList<Postazione>();
 
     public Edificio(String nome, String indirizzo, String citta) {

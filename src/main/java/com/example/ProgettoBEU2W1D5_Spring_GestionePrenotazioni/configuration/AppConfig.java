@@ -1,7 +1,9 @@
 package com.example.ProgettoBEU2W1D5_Spring_GestionePrenotazioni.configuration;
 
 import com.example.ProgettoBEU2W1D5_Spring_GestionePrenotazioni.model.*;
+import com.example.ProgettoBEU2W1D5_Spring_GestionePrenotazioni.repository.EdificioDAORepository;
 import com.github.javafaker.Faker;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,8 @@ import java.util.Locale;
 @Configuration
 public class AppConfig {
     Faker fake = Faker.instance(new Locale("it-IT"));
+    @Autowired
+    private EdificioDAORepository edificioDAO;
 
     @Bean("utente1")
     public Utente utente1Bean() {
@@ -32,18 +36,18 @@ public class AppConfig {
     }
 
     @Bean("postazione1")
-    public Postazione postazione1Bean(@Qualifier("edificio1") Edificio edificio ) {
-        return new Postazione("Sala Imperiale", TipoPostazione.SALA_RIUNIONI,300, edificio );
+    public Postazione postazione1Bean() {
+        return new Postazione("Sala Imperiale", TipoPostazione.SALA_RIUNIONI,300, edificioDAO.findById(1L).get());
     }
 
     @Bean("postazione2")
-    public Postazione postazione2Bean(@Qualifier("edificio1") Edificio edificio ) {
-        return new Postazione("Sala Primavera", TipoPostazione.OPENSPACE,150, edificio );
+    public Postazione postazione2Bean( ) {
+        return new Postazione("Sala Primavera", TipoPostazione.OPENSPACE,150,edificioDAO.findById(1L).get());
     }
 
     @Bean("postazione3")
-    public Postazione postazione3Bean(@Qualifier("edificio1") Edificio edificio ) {
-        return new Postazione("Sala Levante", TipoPostazione.PRIVATO,30, edificio );
+    public Postazione postazione3Bean( ) {
+        return new Postazione("Sala Levante", TipoPostazione.PRIVATO,30,edificioDAO.findById(1L).get());
     }
 
     @Bean("prenotazioneCustom")
@@ -51,7 +55,4 @@ public class AppConfig {
     public Prenotazione prenotazioneBean() {
         return new Prenotazione();
     }
-
-
-
 }
