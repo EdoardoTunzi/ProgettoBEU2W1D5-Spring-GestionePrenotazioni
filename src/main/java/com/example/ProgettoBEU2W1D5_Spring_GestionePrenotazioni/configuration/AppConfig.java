@@ -44,7 +44,7 @@ public class AppConfig {
     // alla prima creazione del db devono essere commentati per evitare errori nella creazione del db.
     // Possono essere utilizzati solo una volta creato l'edificio
 
-   /* @Bean("postazione1")
+    @Bean("postazione1")
     public Postazione postazione1Bean() {
         return new Postazione("Sala Imperiale", TipoPostazione.SALA_RIUNIONI, 300, edificioDAO.findById(1L).get());
     }
@@ -57,7 +57,7 @@ public class AppConfig {
     @Bean("postazione3")
     public Postazione postazione3Bean() {
         return new Postazione("Sala Levante", TipoPostazione.PRIVATO, 30, edificioDAO.findById(1L).get());
-    }*/
+    }
 
     @Bean("prenotazioneCustom")
     @Scope("prototype")
