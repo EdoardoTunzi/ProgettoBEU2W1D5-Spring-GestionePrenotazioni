@@ -28,7 +28,12 @@ public class PostazioneService {
         return postazione3Provider.getObject();
     }
 
+    //metodi DAO
     public void savePostazione(Postazione p) {
         postazioneDAO.save(p);
+    }
+
+    public Postazione findPostazioneById(Long id) {
+        return postazioneDAO.findById(id).get();
     }
 }

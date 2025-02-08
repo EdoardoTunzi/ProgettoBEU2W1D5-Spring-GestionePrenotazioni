@@ -19,6 +19,7 @@ public class EdificioService {
         return edificioProvider.getObject();
     }
 
+    //metodi DAO
     public void saveEdificio(Edificio edificio) {
         edificioDAO.save(edificio);
     }

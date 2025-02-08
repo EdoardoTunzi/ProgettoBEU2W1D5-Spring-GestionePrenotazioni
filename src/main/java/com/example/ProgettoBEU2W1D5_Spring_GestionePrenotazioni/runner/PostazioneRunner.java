@@ -19,11 +19,11 @@ public class PostazioneRunner implements CommandLineRunner {
 
 
         //Postazione p1 = postazioneService.createPostazione1();
-        Postazione p2 = postazioneService.createPostazione2();
+       /* Postazione p2 = postazioneService.createPostazione2();
         Postazione p3 = postazioneService.createPostazione3();
 
        // postazioneService.savePostazione(p1);
         postazioneService.savePostazione(p2);
-        postazioneService.savePostazione(p3);
+        postazioneService.savePostazione(p3);*/
     }
 }

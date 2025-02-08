@@ -29,6 +29,7 @@ public class PrenotazioneService {
         return p;
     }
 
+    //metodi DAO
     public void savePrenotazione(Prenotazione p) {
         prenotazioneDAO.save(p);
     }

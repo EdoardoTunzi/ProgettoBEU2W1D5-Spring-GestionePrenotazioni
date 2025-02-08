@@ -26,7 +26,6 @@ public class Postazione {
     private Edificio edificio;
     private boolean disponibile;
     @OneToMany
-    @JoinColumn(name = "prenotazione_id")
     private List<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
 
     public Postazione(String descrizione, TipoPostazione tipoPostazione, int numMaxOccupanti, Edificio edificio) {

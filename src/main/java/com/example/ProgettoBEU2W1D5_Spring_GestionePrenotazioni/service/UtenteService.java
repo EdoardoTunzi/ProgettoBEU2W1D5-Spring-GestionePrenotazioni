@@ -26,7 +26,12 @@ public class UtenteService {
         return utente3Provider.getObject();
     }
 
+    //metodi DAO
     public void saveUtente(Utente u) {
         utenteDAO.save(u);
+    }
+
+    public Utente findUtenteById(long id) {
+       return utenteDAO.findById(id).get();
     }
 }
